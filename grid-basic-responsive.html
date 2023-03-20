@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid basic-responsive</title><style>
+        *{box-sizing: border-box;}
+        .top 
+        {
+            height: 100px;
+            width: 100%;
+            background: gray;
+            display: grid;
+            grid-template-columns: 6fr 4fr;
+        }
+
+        .top .x
+        {
+            border: 2px solid red;
+        }
+
+        .content 
+        {
+            /* height: 400px; */
+            background-color: lightblue;
+            display: grid;
+            grid-template-columns: 2fr 2fr 3fr 3fr;
+        }
+
+        .content .prd 
+        {
+            border: 2px solid;
+        }
+
+        .content .prd .abc {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            border: 1px solid blue;
+            /* height: 200px; */
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        .content .prd .abc .col {
+
+           border: 1px solid;
+           height: inherit;
+        }
+
+        @media (max-width:500px)
+        {
+            .top { grid-template-columns: 1fr;}
+          .content {grid-template-columns: 1fr;}
+          .content .prd .abc { grid-template-columns: 1fr;}
+        }
+
+   
+
+
+    </style>
+</head>
+<body>
+
+    <div class="top">
+        <div class="x">p1</div>
+        <div class="x">p2</div>
+    </div>
+
+
+    <div class="content">
+        <div class="prd">prd1</div>
+        <div class="prd">prd2</div>
+        <div class="prd">
+            <div class="abc">top</div>
+            <div class="abc">
+                <div class="col">col 1</div>
+                <div class="col">col 2</div>
+                <div class="col">col 3</div>
+            </div>
+        </div>
+        <div class="prd">prd4</div>
+    </div>
+    
+</body>
+</html>
+
